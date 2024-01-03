@@ -1,0 +1,16 @@
+import math
+
+def euclidean_distance(point1, point2):
+    return math.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
+
+# Take tuple input from the user
+point1_input = input("Enter the coordinates of the first point (x, y) separated by a comma: ")
+point2_input = input("Enter the coordinates of the second point (x, y) separated by a comma: ")
+
+# Convert input strings to tuples
+point1 = tuple(map(float, point1_input.split(',')))
+point2 = tuple(map(float, point2_input.split(',')))
+
+# Calculate Euclidean distance
+distance = euclidean_distance(point1, point2)
+print(f"Euclidean distance between {point1} and {point2}: {distance}")
