@@ -1,0 +1,27 @@
+def calculate_electricity_bill(units_consumed):
+    additional_charges = 0
+
+    if units_consumed <= 100:
+        additional_charges = 25.00
+        rate = 1.5
+    elif units_consumed <= 200:
+        additional_charges = 50.00
+        rate = 2.5
+    elif units_consumed <= 300:
+        additional_charges = 5.00
+        rate = 4.0
+    elif units_consumed <= 350:
+        additional_charges = 100.00
+        rate = 7.0
+    else:
+        print("Units consumed beyond the defined ranges. Please check the rates.")
+        return None
+
+    total_bill = (units_consumed * rate) + additional_charges
+    return total_bill
+
+units_consumed = int(input("Enter the number of units consumed: "))
+bill = calculate_electricity_bill(units_consumed)
+
+if bill is not None:
+    print(f"Electricity bill for {units_consumed} units: {bill}₹")
